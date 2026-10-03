@@ -1,6 +1,10 @@
-# Simple Banking System
+# Python Flask Banking System with PostgreSQL
 
-A beginner-friendly Flask app using Python and PostgreSQL. It demonstrates classes, objects, functions, dictionaries, JSON file handling, and exception handling.
+A beginner-friendly **Python and SQL project**: a full-stack bank management system built with Flask and PostgreSQL. Use it to learn Python web development, relational database design, SQL queries, and CRUD operations through a working banking demo.
+
+**Tech stack:** Python 3 · Flask · PostgreSQL · SQL · Psycopg · HTML · CSS
+
+Try the live demo: [north-banking.onrender.com](https://north-banking.onrender.com/login). The free demo may take about a minute to wake after inactivity.
 
 ## Features
 
@@ -10,6 +14,16 @@ A beginner-friendly Flask app using Python and PostgreSQL. It demonstrates class
 - Check the balance and view the transaction history.
 - Close an account after its balance reaches zero. Closed accounts cannot log in or receive transfers.
 - Keep PostgreSQL as the main database and refresh `data/bank_backup.json` after account or transaction changes. PINs are hashed in PostgreSQL and are never written to the JSON file.
+
+## What this Python and SQL project demonstrates
+
+- Building a Python web application with Flask routes, forms, and server-rendered templates.
+- Connecting Python to PostgreSQL and defining relational tables, constraints, and foreign keys with SQL.
+- Using parameterized SQL queries for account registration, authentication, balances, transfers, and transaction history.
+- Implementing database transactions, row locking, password hashing, and one-time PIN recovery tokens.
+- Running a full-stack bank management system locally or deploying a demo from GitHub.
+
+This repository is suitable as a **Python PostgreSQL project**, **Python SQL project**, or **bank management system project** for learning and portfolio demonstration.
 
 ## Run locally
 
