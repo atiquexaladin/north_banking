@@ -156,7 +156,9 @@ def forgot_pin():
         email = request.form.get("email", "").strip().lower()
         generic_message = "If an active account uses that email, a reset link will be sent shortly."
 
-        public_base_url = os.getenv("PUBLIC_BASE_URL", "").rstrip("/")
+        public_base_url = (
+            os.getenv("PUBLIC_BASE_URL") or os.getenv("RENDER_EXTERNAL_URL", "")
+        ).rstrip("/")
         parsed_base_url = urlparse(public_base_url)
         if (
             not all(os.getenv(key) for key in ("SMTP_HOST", "SMTP_USER", "SMTP_PASSWORD"))

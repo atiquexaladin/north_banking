@@ -44,6 +44,17 @@ The recovery email is collected during registration. Accounts created before rec
 
 The app currently has a customer dashboard only; it does not include an admin profile or admin dashboard.
 
+### Free public demo deployment
+
+This Flask app needs a Python web host and PostgreSQL; GitHub Pages only serves static sites and cannot run its backend. A free demo can use the Render free web-service plan with a Neon free PostgreSQL database:
+
+1. Create a free Neon project and copy its pooled PostgreSQL connection string. Keep it private.
+2. In Render, create a new Blueprint and connect this public GitHub repository. Render reads `render.yaml` and creates a free web service.
+3. Set the service's `DATABASE_URL` to the Neon connection string in Render's environment settings, then deploy.
+4. Open the generated `https://...onrender.com` URL. The app creates its tables during startup. Future GitHub pushes trigger redeploys after the repository is linked.
+
+Free Render services sleep after 15 minutes without traffic and can take about a minute to wake. Neon free usage is subject to its current storage, compute, and transfer quotas. This is a learning/demo deployment, not a real-money banking service. PIN reset email additionally needs SMTP settings as described above.
+
 The app creates its `accounts` and `transactions` tables on startup. If the older version of this project has a `transactions` table, it is renamed to `legacy_transactions` so its records are preserved while the new banking table is created.
 
 This project is for learning and is not intended for handling real money or production banking.
