@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<main class="container">
+    <section class="form-card">
+        <h1>Transfer money</h1>
+        <p class="subtitle">Send money to another active account.</p>
+        <form method="post">
+            <label for="account_id">Recipient account number</label>
+            <input id="account_id" name="account_id" type="number" min="1" required>
+            <label for="amount">Amount</label>
+            <input id="amount" name="amount" type="number" min="0.01" step="0.01" placeholder="0.00" required>
+            <button class="button dark" type="submit">Send transfer</button>
+        </form>
+    </section>
+</main>
+{% endblock %}

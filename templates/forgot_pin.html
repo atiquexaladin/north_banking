@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Forgot PIN · Northstar Bank{% endblock %}
+{% block content %}
+<main class="auth-layout compact-auth">
+    <section class="auth-story">
+        <div class="story-content">
+            <span class="eyebrow light-eyebrow"><span class="status-dot"></span> ACCOUNT SECURITY</span>
+            <h1>Back in,<br><em>in a moment.</em></h1>
+            <p>We'll send a private, single-use reset link to the recovery email on your account.</p>
+            <div class="story-proof"><span class="proof-icon">⌁</span><span><strong>Your security comes first</strong><small>Reset links expire after 20 minutes.</small></span></div>
+        </div>
+        <div class="story-orbit orbit-one"></div><div class="story-orbit orbit-two"></div>
+        <span class="story-index">Nº 03 <span>·</span> ACCOUNT RECOVERY</span>
+    </section>
+    <section class="auth-panel">
+        <div class="auth-card">
+            <a class="back-link" href="{{ url_for('login') }}">← Back to sign in</a>
+            <span class="eyebrow">PIN RECOVERY</span>
+            <h2>Forgot your PIN?</h2>
+            <p class="subtitle">Enter the recovery email linked to your account. If it matches, we'll send a reset link.</p>
+            <form method="post">
+                <label for="email">Recovery email</label>
+                <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+                <button class="button dark" type="submit">Send reset link <span aria-hidden="true">→</span></button>
+            </form>
+            <div class="security-note"><span>▣</span> For your privacy, we won't reveal whether an email is registered.</div>
+        </div>
+    </section>
+</main>
+{% endblock %}

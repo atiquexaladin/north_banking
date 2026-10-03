@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<main class="container">
+    <section class="form-card">
+        <h1>Withdraw funds</h1>
+        <p class="subtitle">Available: ${{ '%.2f'|format(current_account['balance']) }}</p>
+        <form method="post">
+            <label for="amount">Amount</label>
+            <input id="amount" name="amount" type="number" min="0.01" step="0.01" placeholder="0.00" required>
+            <button class="button dark" type="submit">Make withdrawal</button>
+        </form>
+    </section>
+</main>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}Sign in · Northstar Bank{% endblock %}
+{% block content %}
+<main class="auth-layout">
+    <section class="auth-story">
+        <div class="story-content">
+            <span class="eyebrow light-eyebrow"><span class="status-dot"></span> YOUR MONEY, IN GOOD HANDS</span>
+            <h1>Make room for<br><em>what matters.</em></h1>
+            <p>A calmer way to manage everyday money. Your accounts and activity, all in one place.</p>
+            <div class="story-proof"><span class="proof-icon">✳</span><span><strong>Banking, made personal</strong><small>Simple tools. Clear details. Your call.</small></span></div>
+        </div>
+        <div class="story-orbit orbit-one"></div><div class="story-orbit orbit-two"></div>
+        <span class="story-index">Nº 01 <span>·</span> PERSONAL BANKING</span>
+    </section>
+    <section class="auth-panel">
+        <div class="auth-card">
+            <span class="eyebrow">WELCOME BACK</span>
+            <h2>Sign in to your account</h2>
+            <p class="subtitle">Enter your account number and secure PIN to continue.</p>
+            <form method="post">
+                <label for="account_id">Account number</label>
+                <input id="account_id" name="account_id" type="number" min="1" autocomplete="username" placeholder="e.g. 100024" required>
+                <label for="pin">Your PIN <a class="label-link" href="{{ url_for('forgot_pin') }}">Forgot PIN?</a></label>
+                <input id="pin" name="pin" type="password" inputmode="numeric" autocomplete="current-password" placeholder="Enter your 4–6 digit PIN" required>
+                <button class="button dark" type="submit">Continue securely <span aria-hidden="true">→</span></button>
+            </form>
+            <p class="auth-footer">New to Northstar? <a href="{{ url_for('register') }}">Open an account</a></p>
+            <div class="security-note"><span>▣</span> Your details are protected with encrypted sign-in.</div>
+        </div>
+    </section>
+</main>
+{% endblock %}

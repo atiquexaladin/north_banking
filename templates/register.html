@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}Open an account · Northstar Bank{% endblock %}
+{% block content %}
+<main class="auth-layout register-layout">
+    <section class="auth-story">
+        <div class="story-content">
+            <span class="eyebrow light-eyebrow"><span class="status-dot"></span> A BETTER WAY TO BANK</span>
+            <h1>Your next chapter<br>starts <em>right here.</em></h1>
+            <p>Set up your account in just a few steps. Keep your account number safe; you'll use it whenever you sign in.</p>
+            <div class="story-proof"><span class="proof-icon">✳</span><span><strong>Built around you</strong><small>See balances and everyday activity at a glance.</small></span></div>
+        </div>
+        <div class="story-orbit orbit-one"></div><div class="story-orbit orbit-two"></div>
+        <span class="story-index">Nº 02 <span>·</span> GETTING STARTED</span>
+    </section>
+    <section class="auth-panel">
+        <div class="auth-card">
+            <span class="eyebrow">LET'S GET STARTED</span>
+            <h2>Open your account</h2>
+            <p class="subtitle">A few details to make your banking yours.</p>
+            <form method="post">
+                <label for="name">Full name</label>
+                <input id="name" name="name" maxlength="120" autocomplete="name" placeholder="As it appears on your ID" required>
+                <label for="recovery_email">Recovery email</label>
+                <input id="recovery_email" name="recovery_email" type="email" maxlength="254" autocomplete="email" placeholder="you@example.com" required>
+                <p class="field-hint">Used only to help you securely reset a forgotten PIN.</p>
+                <label for="account_type">Choose account type</label>
+                <select id="account_type" name="account_type" required>
+                    <option value="Savings">Savings account</option>
+                    <option value="Current">Current account</option>
+                </select>
+                <label for="pin">Create a 4 to 6 digit PIN</label>
+                <input id="pin" name="pin" type="password" inputmode="numeric" autocomplete="new-password"
+                       minlength="4" maxlength="6" pattern="[0-9]{4,6}" placeholder="Choose a secure PIN" required>
+                <button class="button dark" type="submit">Create my account <span aria-hidden="true">→</span></button>
+            </form>
+            <p class="auth-footer">Already banking with us? <a href="{{ url_for('login') }}">Sign in</a></p>
+        </div>
+    </section>
+</main>
+{% endblock %}

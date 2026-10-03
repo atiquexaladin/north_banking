@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}Choose a new PIN · Northstar Bank{% endblock %}
+{% block content %}
+<main class="auth-layout compact-auth">
+    <section class="auth-story">
+        <div class="story-content">
+            <span class="eyebrow light-eyebrow"><span class="status-dot"></span> SECURE ACCOUNT RECOVERY</span>
+            <h1>One fresh start<br>away from <em>your money.</em></h1>
+            <p>Choose a new PIN that is easy for you to remember and hard for anyone else to guess.</p>
+        </div>
+        <div class="story-orbit orbit-one"></div><div class="story-orbit orbit-two"></div>
+        <span class="story-index">Nº 04 <span>·</span> NEW PIN</span>
+    </section>
+    <section class="auth-panel">
+        <div class="auth-card">
+            <span class="eyebrow">RESET YOUR PIN</span>
+            <h2>Choose a new PIN</h2>
+            <p class="subtitle">Use 4 to 6 digits. This reset link can only be used once.</p>
+            <form method="post">
+                <label for="pin">New PIN</label>
+                <input id="pin" name="pin" type="password" inputmode="numeric" autocomplete="new-password"
+                       minlength="4" maxlength="6" pattern="[0-9]{4,6}" placeholder="Enter your new PIN" required>
+                <button class="button dark" type="submit">Save new PIN <span aria-hidden="true">→</span></button>
+            </form>
+        </div>
+    </section>
+</main>
+{% endblock %}

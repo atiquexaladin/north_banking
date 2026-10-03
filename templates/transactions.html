@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<main class="container">
+    <header class="dashboard-head">
+        <div><h1>Transactions</h1><p>Your complete account activity.</p></div>
+        <a class="button" href="{{ url_for('dashboard') }}">Back to dashboard</a>
+    </header>
+    <div class="table-wrap">
+        <table>
+            <thead><tr><th>Type</th><th>Related account</th><th>Date</th><th>Amount</th></tr></thead>
+            <tbody>
+                {% for item in transactions %}
+                <tr>
+                    <td>{{ item['transaction_type'] }}</td>
+                    <td>
+                        {% if item['related_account_id'] %}
+                            {{ 'From' if item['transaction_type'] == 'Received' else 'To' }}
+                            #{{ item['related_account_id'] }}{% if item['related_name'] %} ({{ item['related_name'] }}){% endif %}
+                        {% else %}Self{% endif %}
+                    </td>
+                    <td>{{ item['transaction_date'].strftime('%Y-%m-%d %H:%M') }}</td>
+                    <td class="{{ 'credit' if item['transaction_type'] in ['Deposit', 'Received'] else 'debit' }}">
+                        {{ '+' if item['transaction_type'] in ['Deposit', 'Received'] else '-' }}${{ '%.2f'|format(item['amount']) }}
+                    </td>
+                </tr>
+                {% else %}
+                <tr><td colspan="4">No transactions yet.</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</main>
+{% endblock %}
